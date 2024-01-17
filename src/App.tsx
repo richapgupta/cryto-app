@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import './App.css';
+import ExchangeRate from './components/cryptocurrencypage/ExchangeRate';
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false, // Disable automatic refetching on window focus
+      refetchInterval: 60000, // Refetch queries every 60 seconds
+    },
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="container mt-5">
+        <div className="pt-lg-5 p-5 align-items-center rounded-3 border shadow-lg">
+          <QueryClientProvider client={queryClient}>
+            <ExchangeRate />
+          </QueryClientProvider>
+        </div>
+      </div>
     </div>
   );
 }
