@@ -1,3 +1,6 @@
+# Project Description 
+How to Work with Third-Party APIs in React by Building a Crypto Exchange Rate Web App (https://www.freecodecamp.org/news/tag/react/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
